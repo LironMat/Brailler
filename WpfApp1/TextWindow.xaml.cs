@@ -24,5 +24,24 @@ namespace WpfApp1
             InitializeComponent();
             TB.Text = text;
         }
+
+        private void TB_PreviewMouseWheel(object sender, MouseWheelEventArgs e)
+        {
+            if (Keyboard.IsKeyDown(Key.LeftCtrl))
+            {
+                if (e.Delta < 0)
+                {
+                    if (TB.FontSize > 1)
+                    {
+                        TB.FontSize--;
+                    }
+                }
+                else
+                {
+                    TB.FontSize++;
+                }
+                e.Handled = true;
+            }
+        }
     }
 }
