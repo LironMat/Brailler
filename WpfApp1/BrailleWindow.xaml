@@ -1,0 +1,26 @@
+﻿<Window x:Class="WpfApp1.BrailleWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp1"
+        mc:Ignorable="d"
+        Title="BrailleWindow" SizeToContent="WidthAndHeight">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="0" Orientation="Horizontal">
+            <Label Content="Width: "/>
+            <TextBox x:Name="WidthTB" Width="100"/>
+            <Label Content="Height: "/>
+            <TextBox x:Name="HeightTB" Width="100"/>
+        </StackPanel>
+        <Button Grid.Row="1" x:Name="SelectPic" Content="Select Pic" Click="SelectPic_Click"/>
+        <Button Grid.Row="2" x:Name="BraillePic" Content="Braille It" Click="BraillePic_Click"/>
+        <Image  Grid.Row="3" x:Name="Img" Stretch="None"/>
+    </Grid>
+</Window>
